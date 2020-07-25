@@ -30,4 +30,12 @@ export class AppComponent {
     this.quotes.unshift(this.quotation);
     this.quotation = { author: '', sentence: '', votes: 0 };
   }
+
+  bestQuotes(): Quotation[] {
+    return this.quotes.filter(q => q.votes > 0)
+  }
+
+  worstQuotes(): Quotation[] {
+    return this.quotes.filter(q => q.votes < 0)
+  }
 }
